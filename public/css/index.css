@@ -1,0 +1,110 @@
+body {
+    margin: 0 auto;
+    background-color: #f1f1f1;
+}
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+p{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+}
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul{
+    display: flex;
+}
+li{
+    margin: 0 15px;
+}
+li>a{
+    height: 40px;
+    line-height: 40px;
+    
+}
+.logout,.login{
+    height: 40px;
+    line-height: 40px;
+}
+.login>a{
+    margin-left: 30px;
+}
+.box{
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    background-color: #fff;
+    line-height: 40px;
+    border-bottom: 1px solid #666;
+}
+.seach{
+    height: 20px;
+    border: 1px solid #f50;
+}
+.seach1{
+    height: 24px;
+    color: #f50;
+    border: 1px solid #f50;
+}
+.content{
+    background-color: #fff;
+}
+.logout>.user,.logout>a{
+    margin-left: 15px;
+}
+.sub{
+    position: relative;
+}
+.seach{
+    position: relative;
+}
+.seach1{
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.box2{
+    background-color: #fff;
+    padding: 10px;
+}
+ul,ol,li{
+    list-style: none;
+}
+.kuai{
+    margin-bottom:20px;
+    background-color: #fff;
+    padding: 10px;
+}
+.col{
+    background-color: #fff;
+}
+.colbox{
+    display: block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: aqua;
+    margin: 20px;
+}
+/* 头像 */
+.logout{
+    /* width: 120px; */
+    margin: 0 10px;
+}
+.logout img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle;
+}

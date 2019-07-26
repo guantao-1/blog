@@ -1,0 +1,12 @@
+{{include './header.html'}}
+
+<div class="container col">
+    <ul style="display: flex;  justify-content: space-around;flex-wrap: wrap">
+        {{each item arr}}
+        <li><a href="/biaoqian?value={{arr}}" class="colbox" style="color: #f50;">{{arr}}</a></li>
+        {{/each}}
+    </ul>
+
+</div>
+
+{{include './footer.html'}}

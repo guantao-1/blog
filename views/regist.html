@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="">
+    <title></title>
+</head>
+<style>
+    body {
+        margin: 0;
+        background-color: #f1f1f1;
+    }
+
+    .container {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .box {
+        width: 400px;
+        height: 200px;
+        background-color: #fff;
+    }
+
+    .content {
+        width: 220px;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+</style>
+
+<body>
+    <div class="container box">
+        <form action="/regist" method="post" class="content">
+            <label>账号：<input type="text" name="username" required value="张三"></label><br>
+            <label>密码：<input type="password" name="password" required value="123"></label><br>
+            <label>确认：<input type="password" name="repassword" required value="123"></label><br>
+            <label>邮箱：<input type="password" name="mailbox" required value="123@.com"></label><br>
+            <button type="submit">注册</button> {{error}}
+        </form>
+    </div>
+</body>
+
+</html>

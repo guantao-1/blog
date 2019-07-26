@@ -1,0 +1,11 @@
+<div id="page">    
+    {{if page!=1}}
+    <a href="/?page={{page-1}}">上一页</a>
+    {{/if}}
+   
+    <span>第{{page}}/{{allPages}}页</span>
+
+    {{if page!==allPages}}
+    <a href="/?page={{page+1}}">下一页</a>
+    {{/if}}
+</div>

@@ -1,0 +1,50 @@
+{{include './header.html'}}
+<div class="container box2">
+    <div class="data">
+        <p>作者：<span>{{data.username}}</span>|日期：<span>{{data.time}}</span>| 标签：<span><a href=""
+                    style="color: #f50;margin-left: 12px;">{{data.label[0]}}</a><a href=""
+                    style="color: #f50;margin-left: 12px;">{{data.label[1]}}</a><a href=""
+                    style="color: #f50;margin-left: 12px;">{{data.label[2]}}</a></span></p>
+        <p style="color: #f50;width: 1000px;white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">{{data.msg}}
+        </p>
+    </div>
+
+    <div style="margin-top:15px;">
+        <a class="readcount">阅读：<span>{{data.count}}</span>次</a>|<a
+            class="comment">评论：<span>{{data.reples.length}}</span></a>
+    </div>
+    {{if user}}
+    {{if data.username == user.username}}
+    <a href="/edit?_id={{data._id}}" style="color: #f50;">编辑</a>&nbsp;
+    <a class="delbtn" href="/delete?_id={{data._id}}" style="color: #f50;">删除</a>
+    {{/if}}
+    {{/if}}
+    <hr>
+    <h3>评论：</h3>
+    <ol>
+        {{each data.reples reply}}
+        <li>
+            <p><span style="color:#f50;">{{reply.username}}</span>&nbsp;回复于：{{reply.time}}</p>
+            <p>{{reply.content}}</p>
+        </li>
+        {{/each}}
+    </ol>
+    {{if user}}
+    <form action="/add/reply" method="post">
+        <input type="text" name="_id" value="{{data._id}}" hidden>
+        <textarea name="content" cols="100" rows="5"></textarea><br>
+        <button type="submit">回复</button>
+    </form>
+    {{/if}}
+
+</div>
+<script>
+    var delbtn = document.querySelector('.delbtn')
+    delbtn.onclick = function (ev) {
+        var delconf = confirm('确认删除?')
+        if (!delconf) {
+            return false
+        }
+    }
+</script>
+{{include './footer.html'}}

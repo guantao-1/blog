@@ -1,0 +1,16 @@
+{{include './header.html'}}
+
+<div class="container conter" style="background-color: #fff;padding: 15px;">
+    <h2 style="margin: 0;">2019年</h2>
+    {{each data cundang}}
+    <div style="display: flex;margin: 20px 0 20px 15px;font-size: 18px;">
+        <span>{{cundang.time}}&nbsp;&nbsp;&nbsp;</span>
+        <form action="/details" method="get">
+            <input type="text" value="{{cundang._id}}" name="_id" hidden>
+            <button type="submit" style="color: #f50;font-size: 18px;font-weight: bold;border: none;background-color: #fff;outline:none;padding: 0">{{cundang.title}}</button>
+        </form>
+    </div>
+    {{/each}}
+</div>
+
+{{include './footer.html'}}

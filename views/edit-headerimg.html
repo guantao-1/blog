@@ -1,0 +1,54 @@
+{{include './header.html'}}
+
+<style>
+#edit-headerimg .header-img{
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+#edit-headerimg .header-img img{
+    width: 100%;
+    height: 100%;
+}
+#edit-headerimg .header-img .edit-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 120px;
+    color: white;
+    display: none;
+    cursor: pointer;
+}
+#edit-headerimg .header-img:hover .edit-btn{
+    display: block;
+}
+</style>
+<div id="edit-headerimg">
+    <form action="/upload/header" method="post" enctype="multipart/form-data">
+        <div class="header-img">
+            <img class="head-img" src="{{user.headerurl}}" alt="">
+            <span class="edit-btn">选择头像</span>
+            <!-- <label for="headerimg">选择头像</label> -->
+            <input type="file" name="headerimg" id="headerimg" accept="image/*" hidden>
+        </div>
+        <button type="submit">修改</button>
+    </form>
+</div> 
+<script>
+document.querySelector('.edit-btn').onclick = function(){
+    // 自带的文件选择按钮太丑，一般会隐藏，自己设置按钮样式，通过触发 input[type=file].click(); 调出文件选择框
+    document.querySelector('#headerimg').click();
+};
+document.querySelector('#headerimg').onchange = function(){
+    // console.log(this.files);
+    var file = this.files[0];
+    document.querySelector('.head-img').src = URL.createObjectURL(file);
+}
+</script>
+
+
+{{include './footer.html'}}

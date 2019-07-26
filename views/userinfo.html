@@ -1,0 +1,42 @@
+{{include './header.html'}}
+
+<style>
+#userinfo .header-img{
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+#userinfo .header-img img{
+    width: 100%;
+    height: 100%;
+}
+#userinfo .header-img .edit-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: center;
+    line-height: 80px;
+    color: white;
+    display: none;
+}
+#userinfo .header-img:hover .edit-btn{
+    display: block;
+}
+
+</style>
+<div id="userinfo">
+    <form action="/edit/userinfo" method="post">
+        <span>头像：</span>
+        <div class="header-img">
+            <img src="{{user.headerurl}}" alt="">
+            <a class="edit-btn" href="/edit/user/header/{{user.username}}">编辑头像</a>
+        </div>
+        <label>姓名：{{user.username}}</label><br>
+
+        <button type="submit">修改</button>
+    </form>
+</div> 
+{{include './footer.html'}}

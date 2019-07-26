@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="author" content="">
+    <title></title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/jquery-3.4.1.js"></script>
+    <link rel="shortcut icon" href="/img/favicon.ico">
+</head>
+
+<body>
+    <nav>
+        <div class="container " style="display: flex;justify-content: space-between;">
+            <ul>
+                <li style="margin-left: 0;"><a href="" style="font-size: 24px;color: #f50;font-weight: bold;">BLOG</a>
+                </li>
+                <li><a href="/">首页</a></li>
+                <li><a href="/cd">存档</a></li>
+                <li><a href="/tabs">标签</a></li>
+                <li><a href="/release">发布</a></li>
+            </ul>
+            <div class="box">
+                <form action="/search" method="GET" class="sub">
+                    <input type="text" name="search" placeholder="搜一搜" class="seach">
+                    <button type="submit" class="seach1">搜索</button>
+                </form>
+                {{if user}}
+                <div class="logout">
+                    <img src="{{user.headerurl}}" alt="">
+                    <a href="/edit/userinfo" class="user">{{user.username}}</a>
+                    <a href="/logout">退出登录</a>
+                </div>
+                {{else}}
+                <div class="login">
+                    <a href="/login">登录</a>
+                    <a href="/regist">注册</a>
+                </div>
+                {{/if}}
+            </div>
+        </div>
+    </nav>

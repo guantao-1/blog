@@ -1,0 +1,25 @@
+{{include './header.html'}}
+
+<div class="container">
+    {{each msgs msg}}
+    <div class="kuai">
+        <div class="msg">
+            <form action="/details" method="get">
+                <input type="text" value="{{msg._id}}" name="_id" hidden>
+                <button type="submit" style="color: #f50;font-size: 18px;font-weight: bold;border: none;background-color: #fff;outline:none;">{{msg.title}}</button>
+            </form>
+            <p>作者：<a href="/authors?value={{msg.username}}" style="color: #f50;">{{msg.username}}</a>|日期：<span>{{msg.time}}</span>|
+                标签：<span>
+                    {{each msg.label lab}}
+                    <a href="/biaoqian?value={{lab}}"style="color: #f50;margin-left: 12px;">{{lab}}</a>
+                    {{/each}}
+                </span></p>
+            <a href=""style="color: #f50;width: 1000px;white-space:nowrap; text-overflow:ellipsis; overflow:hidden;">{{msg.msg}}</a>
+        </div>
+        <div style="margin-top:15px;">
+            <p>阅读：<span>{{msg.count}}</span>次|评论：<span>{{msg.reples.length}}</span></p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{include './footer.html'}}

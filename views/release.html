@@ -1,0 +1,13 @@
+{{include './header.html'}}
+
+<div class="container conter">
+    <form action="/release" method="post" style="margin-left: 30px;padding-top: 20px;padding-bottom: 20px;">
+        <label>标题：</label><input type="text" name="title" required><br>
+        <label>标签：</label><input type="text" name="lab">&nbsp;<input type="text" name="lab">&nbsp;<input type="text" name="lab"><br>
+        <label>内容：</label><br>
+        <textarea name="msg" id="" cols="30" rows="10" style="width: 800px;"></textarea><br>
+        <button type="submit">发布</button>{{error}}
+    </form>
+</div>
+
+{{include './footer.html'}}
